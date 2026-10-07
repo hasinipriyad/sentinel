@@ -1,0 +1,17 @@
+[project]
+name = "sentinel"
+version = "0.1.0"
+description = "AI on-call copilot that investigates production incidents"
+readme = "README.md"
+authors = [
+    { name = "Hasini Priya", email = "hasinipriyad7@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+sentinel = "sentinel:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"

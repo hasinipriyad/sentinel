@@ -24,7 +24,7 @@ class Incident(Base):
     title: Mapped[str] = mapped_column(String(200))
     description: Mapped[str] = mapped_column(Text)
     severity: Mapped[Severity] = mapped_column(SAEnum(Severity, values_callable=lambda e:[m.value for m in e]))
-    status: Mapped[Status] = mapped_column(SAEnum(Status, values_callable=lambda e:[m.value for m in e]))
+    status: Mapped[Status] = mapped_column(SAEnum(Status, values_callable=lambda e:[m.value for m in e]), default=Status.OPEN)
     service: Mapped[str] = mapped_column(String(100))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
